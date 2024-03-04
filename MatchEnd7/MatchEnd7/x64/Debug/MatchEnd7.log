@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\源\source\repos\MatchEnd7\MatchEnd7\main.cpp(379,7): warning C4101: “studentId”: 未引用的局部变量
+C:\Users\源\source\repos\MatchEnd7\MatchEnd7\main.cpp(379,22): warning C4101: “competitionId”: 未引用的局部变量
+  MatchEnd7.vcxproj -> C:\Users\源\source\repos\MatchEnd7\x64\Debug\MatchEnd7.exe
