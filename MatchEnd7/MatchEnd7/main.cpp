@@ -1,6 +1,4 @@
 #include"main.h"
-
-
 //用户注册
 void registerUser() {
 	char id[20], username[20], role[20], account[20], password[20];
@@ -120,7 +118,6 @@ void saveStudentsToFile() {
 
 	file.close();
 }
-
 
 
 //添加负责人信息
@@ -267,8 +264,6 @@ void addWork() {
 }
 
 
-
-
 //保存作品信息到文件中
 void saveWorksToFile() {
 	ofstream file("works.csv");
@@ -283,8 +278,6 @@ void saveWorksToFile() {
 	file.close();
 }
 
-
-
 //从文件中加载作品信息
 void loadWorksFromFile() {
 	ifstream file("works.csv");
@@ -298,15 +291,12 @@ void loadWorksFromFile() {
 		while (getline(ss, field, ',')) {
 			fields.push_back(field);
 		}
-
 		strcpy(works[num_works].studentId, fields[0].c_str());
 		strcpy(works[num_works].competitionId, fields[1].c_str());
 		strcpy(works[num_works].workName, fields[2].c_str());
 		strcpy(works[num_works].workDescription, fields[3].c_str());
-
 		num_works++;
 	}
-
 	file.close();
 }
 
@@ -317,13 +307,11 @@ void registerForCompetition() {
 		cout << "无法打开文件" << endl;
 		return;
 	}
-
 	char studentId[20], competitionId[20];
 	cout << "请输入您的学生ID: ";
 	cin >> studentId;
 	cout << "请输入竞赛ID: ";
 	cin >> competitionId;
-
 	// 将报名信息写入文件
 	file << studentId << "," << competitionId << ",未评审\n";
 	file.close();
@@ -579,8 +567,7 @@ void managerMenu() {
 		cout << "1. 竞赛信息发布" << endl;
 		cout << "2. 报名管理" << endl;
 		cout << "3. 作品评审" << endl;
-		cout << "4. 结果公布" << endl;
-		cout << "5. 退出到主菜单" << endl; // 新增选项
+		cout << "4. 退出到主菜单" << endl;
 		cout << "****************" << endl;
 		cout << "请输入选项编号：";
 		cin >> select;
@@ -598,9 +585,6 @@ void managerMenu() {
 			// 直接调用评分输入函数
 			break;
 		case 4:
-			// 结果公布逻辑
-			break;
-		case 5:
 			isRunning = false; // 退出循环，返回主菜单
 			break;
 		default:
@@ -672,7 +656,6 @@ int main()
 		case 2:
 			// 用户注册
 			registerUser();
-
 			break;
 		case 0:
 			// 退出系统
